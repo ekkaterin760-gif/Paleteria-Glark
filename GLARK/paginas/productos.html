@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contacto | Paletería Glark</title>
+
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="../index.html">Inicio</a>
+        <a href="../paginas/nosotros.html">Nosotros</a>
+        <a href="../paginas/productos.html">Productos</a>
+        <a href="../paginas/contactos.html">Contacto</a>
+        <a href="../paginas/pedidos.html">Pedidos</a>
+    </nav>
+
+    <section id="menu">
+
+        <h2>NUESTRO MENÚ</h2>
+
+        <!-- BOLIS -->
+		<br></br>
+        <h2>BOLIS</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="../imagenes/mora azul bolis.jpg" alt="Mora Azul">
+                <h4>Mora Azul - $8</h4>
+                <p>Refrescante sabor artesanal.</p>
+                <button onclick="addToCart('Mora Azul', 8)">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="../imagenes/uva bolis.jpg" alt="Uva">
+                <h4>Uva - $8</h4>
+                <p>Dulce y delicioso.</p>
+                <button onclick="addToCart('Uva', 8)">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="../imagenes/fresa bolis.jpg" alt="Fresa">
+                <h4>Fresa - $8</h4>
+                <p>Sabor natural y fresco.</p>
+                <button onclick="addToCart('Fresa', 8)">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="../imagenes/limon bolis.jpg" alt="Limón">
+                <h4>Limón - $8</h4>
+                <p>Ácido y refrescante.</p>
+                <button onclick="addToCart('Limon', 8)">
+                    Agregar
+                </button>
+            </div>
+
+        </div>
+
+        <!-- GRANIZADOS -->
+		<br></br>
+        <h2>GRANIZADOS</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="../imagenes/granizado uva.jpg" alt="Granizado de Uva">
+                <h4>Uva - $15</h4>
+                <p>Granizado frío y delicioso.</p>
+                <button onclick="addToCart('Granizado Uva', 15)">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="../imagenes/granizado fresa.jpg" alt="Granizado de Fresa">
+                <h4>Fresa - $15</h4>
+                <p>El favorito de muchos.</p>
+                <button onclick="addToCart('Granizado Fresa', 15)">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="../imagenes/granizado mora azul.jpg" alt="Granizado Mora Azul">
+                <h4>Mora Azul - $15</h4>
+                <p>Color vibrante y gran sabor.</p>
+                <button onclick="addToCart('Granizado Mora Azul', 15)">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="../imagenes/granizado pina.jpg" alt="Granizado de Piña">
+                <h4>Piña - $15</h4>
+                <p>Tropical y refrescante.</p>
+                <button onclick="addToCart('Granizado Piña', 15)">
+                    Agregar
+                </button>
+            </div>
+
+        </div>
+
+        <!-- ESQUIMOS -->
+		<br></br>
+        <h2>ESQUIMOS</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="../imagenes/esquimos fresa.jpg" alt="Esquimo de Fresa">
+                <h4>Fresa - $25</h4>
+                <p>Cremoso y delicioso.</p>
+                <button onclick="addToCart('Esquimo Fresa', 25)">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="../imagenes/esquimos Chocolate.jpg" alt="Esquimo de Chocolate">
+                <h4>Chocolate - $25</h4>
+                <p>Intenso sabor chocolatoso.</p>
+                <button onclick="addToCart('Esquimo Chocolate', 25)">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="../imagenes/esquimos vainilla.jpg" alt="Esquimo de Vainilla">
+                <h4>Vainilla - $25</h4>
+                <p>Clásico y suave sabor.</p>
+                <button onclick="addToCart('Esquimo Vainilla', 25)">
+                    Agregar
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(product, price){
+
+    cart.push({
+        product: product,
+        price: price
+    });
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    alert(product + " agregado al carrito");
+
+}
+
+</script>
+
+</body>
+
+</html>
